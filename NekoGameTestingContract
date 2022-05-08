@@ -20,7 +20,7 @@
 // Symbol:$NkG
 // Name:NekoGame
 // Total supply: 285,000,000,000
-// Decimals:9
+// Decimals:18
 // ----------------------------------------------------------------------------
 // Max buy 2% max, hold 5%
 // 25% Burnt to dead wallet
@@ -227,7 +227,7 @@ abstract contract Tokenomics {
     string internal constant SYMBOL = "$NKG";
     
     uint16 internal constant FEES_DIVISOR = 10**3;
-    uint8 internal constant DECIMALS = 9;
+    uint8 internal constant DECIMALS = 18;
     uint256 internal constant ZEROES = 10**DECIMALS;
     
     uint256 private constant MAX = ~uint256(0);
@@ -238,12 +238,12 @@ abstract contract Tokenomics {
     /**
      * @dev Set the maximum transaction amount allowed in a transfer.
      */
-    uint256 internal constant maxTransactionAmount = TOTAL_SUPPLY / 100; // 2% of the total supply
+    uint256 internal constant maxTransactionAmount = TOTAL_SUPPLY / 100; // 1% of the total supply
 
     /**
      * @dev Set the maximum allowed balance in a wallet.
      */
-    uint256 internal constant maxWalletBalance = TOTAL_SUPPLY / 25; // 5% of the total supply
+    uint256 internal constant maxWalletBalance = TOTAL_SUPPLY / 25; // 4% of the total supply
     
       /**
      * @dev Set the number of tokens to swap and add to liquidity.
@@ -1147,7 +1147,7 @@ abstract contract Antiwhale is Tokenomics {
     }
 }
 
-abstract contract NKGToken is BaseRfiToken, Liquifier, Antiwhale {
+abstract contract $NKG is BaseRfiToken, Liquifier, Antiwhale {
     using SafeMath for uint256;
 
     constructor(Env _env) {
